@@ -1,0 +1,9 @@
+project: savantenvs/syslog-ng
+target: fuzz_logmsg_deserialize
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_logmsg_deserialize/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_logmsg_deserialize
+    libfuzzer: true
+    timeout: 60

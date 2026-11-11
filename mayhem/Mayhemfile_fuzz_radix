@@ -1,0 +1,10 @@
+project: savantenvs/syslog-ng
+target: fuzz_radix
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_radix/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_radix
+    libfuzzer: true
+    timeout: 60
+    dictionary: /mayhem/mayhem/fuzz_radix/fuzz_radix.dict

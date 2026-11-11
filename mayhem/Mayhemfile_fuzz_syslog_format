@@ -1,0 +1,10 @@
+project: savantenvs/syslog-ng
+target: fuzz_syslog_format
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_syslog_format/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_syslog_format
+    libfuzzer: true
+    timeout: 60
+    dictionary: /mayhem/mayhem/fuzz_syslog_format/fuzz_syslog_format.dict
